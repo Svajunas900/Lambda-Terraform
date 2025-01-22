@@ -2,9 +2,11 @@ name: Terraform Plan
 run-name: Terraform Plan
 
 on:
-  push:
-    branches:
-      - dev
+  workflow_run:
+    workflows:
+      - Deploying and testing Lambda
+    types:
+      - completed
 
 env:
   TF_CLOUD_ORGANIZATION: "OrioCookie"
