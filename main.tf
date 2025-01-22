@@ -16,7 +16,7 @@ resource "aws_lambda_layer_version" "requests_layer" {
   layer_name          = "requests-layer"
   compatible_runtimes = ["python3.13"]
   
-  filename = "layer.zip"
+  filename = "python.zip"
 }
 
 
