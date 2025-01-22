@@ -11,6 +11,14 @@ data "aws_iam_policy_document" "assume_role"{
   }
 }
 
+resource "aws_lambda_layer_version" "requests_layer" {
+  
+  layer_name          = "requests_layer"
+  compatible_runtimes = ["python3.13"]
+  
+  filename = "layer.zip"
+}
+
 
 data "aws_iam_role" "lambda_user" {
   name = "lambda-user"
@@ -25,5 +33,9 @@ resource "aws_lambda_function" "test_lambda" {
   source_code_hash = filebase64sha256("lambda_function.zip")
 
   runtime = "python3.13"
+
+  layers = [
+    aws_lambda_layer_version.requests_layer.arn
+  ]
 }
 
