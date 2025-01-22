@@ -6,30 +6,34 @@ on:
 env:
   TF_CLOUD_ORGANIZATION: "OrioCookie"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
-  TF_WORKSPACE: "terraform-github-actions"
+  TF_WORKSPACE: "Lambda_Terraform"
   CONFIG_DIRECTORY: "./"
 jobs:
-  terraform:
+  terraform-apply:
     if: github.repository != 'hashicorp-education/learn-terraform-github-actions'
     name: "Terraform Apply"
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
+
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Upload Configuration
         uses: hashicorp/tfc-workflows-github/actions/upload-configuration@v1.0.0
         id: apply-upload
         with:
           workspace: ${{ env.TF_WORKSPACE }}
           directory: ${{ env.CONFIG_DIRECTORY }}
+          
       - name: Create Apply Run
         uses: hashicorp/tfc-workflows-github/actions/create-run@v1.0.0
         id: apply-run
         with:
           workspace: ${{ env.TF_WORKSPACE }}
           configuration_version: ${{ steps.apply-upload.outputs.configuration_version_id }}
+      
       - name: Apply
         uses: hashicorp/tfc-workflows-github/actions/apply-run@v1.0.0
         if: fromJson(steps.apply-run.outputs.payload).data.attributes.actions.IsConfirmable

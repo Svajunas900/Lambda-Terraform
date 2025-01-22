@@ -6,10 +6,10 @@ on:
 env:
   TF_CLOUD_ORGANIZATION: "OrioCookie"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
-  TF_WORKSPACE: "terraform-github-actions"
+  TF_WORKSPACE: "Lambda_Terraform"
   CONFIG_DIRECTORY: "./"
 jobs:
-  terraform:
+  terraform-plan:
     if: github.repository != 'hashicorp-education/terraform-github-actions'
     name: "Terraform Plan"
     runs-on: ubuntu-latest
