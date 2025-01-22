@@ -28,7 +28,7 @@ resource "aws_lambda_function" "test_lambda" {
   filename      = "lambda_function.zip"
   function_name = "my_lambda_handler"
   role          = data.aws_iam_role.lambda_user.arn
-  handler       = "my_lambda_function.my_lambda_handler"
+  handler       = "lambda_function.my_lambda_handler"
 
   source_code_hash = filebase64sha256("lambda_function.zip")
 
