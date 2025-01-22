@@ -1,17 +1,19 @@
 name: Terraform Plan
 run-name: Terraform Plan
+
 on:
   push:
     branches:
       - dev
+
 env:
   TF_CLOUD_ORGANIZATION: "OrioCookie"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
   TF_WORKSPACE: "Lambda-Terraform"
   CONFIG_DIRECTORY: "./"
+
 jobs:
   terraform-plan:
-    if: github.repository != 'hashicorp-education/terraform-github-actions'
     name: "Terraform Plan"
     runs-on: ubuntu-latest
     permissions:
