@@ -1,7 +1,7 @@
 import json
 import requests
 
-def lambda_handler(event, context):
+def my_lambda_handler(event, context):
   url = event["url"]
   response = requests.get(url)
   return {
