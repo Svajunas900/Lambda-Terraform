@@ -1,5 +1,5 @@
-name: Deploying and testing Lambda
-run-name: Deploy and test
+name: Test
+run-name: Test
 on: 
   push:
     branches:

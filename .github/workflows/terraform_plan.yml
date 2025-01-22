@@ -4,7 +4,7 @@ run-name: Terraform Plan
 on:
   workflow_run:
     workflows:
-      - Deploying and testing Lambda
+      - Test
     types:
       - completed
 
