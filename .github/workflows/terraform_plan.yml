@@ -1,4 +1,5 @@
-name: "Terraform plan"
+name: "Terraform Plan"
+
 on:
   push:
     branches:
