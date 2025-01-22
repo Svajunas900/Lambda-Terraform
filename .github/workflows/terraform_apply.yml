@@ -3,9 +3,9 @@ run-name: Terraform Apply
 
 on:
   workflow_run:
-    workflows: [Terraform Plan]
-    types: [completed]
-    branches: [dev]
+    workflows: [Terraform Plan]  
+    types:
+      - completed
 
 env:
   TF_CLOUD_ORGANIZATION: "OrioCookie"
