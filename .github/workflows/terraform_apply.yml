@@ -14,8 +14,7 @@ env:
   CONFIG_DIRECTORY: "./"
 
 jobs:
-  on-success:
-    name: "Terraform Apply"
+  terraform-apply:
     runs-on: ubuntu-latest
     permissions:
       contents: read
