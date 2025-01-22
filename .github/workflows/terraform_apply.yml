@@ -5,7 +5,10 @@ on:
   push:
     branches:
       - dev
-
+  workflow_run:
+    workflows: [Terraform Plan]
+    types: [completed]
+    branches: [dev]
 
 env:
   TF_CLOUD_ORGANIZATION: "OrioCookie"
