@@ -6,7 +6,7 @@ on:
 env:
   TF_CLOUD_ORGANIZATION: "OrioCookie"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
-  TF_WORKSPACE: "Lambda_Terraform"
+  TF_WORKSPACE: "Lambda-Terraform"
   CONFIG_DIRECTORY: "./"
 jobs:
   terraform-apply:
