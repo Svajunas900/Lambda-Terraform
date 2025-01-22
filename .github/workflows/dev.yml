@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - dev
+env:
+  TF_CLOUD_ORGANIZATION: "OrioCookie"
+  TF_API_TOKEN: "${{secrets.TF_API_TOKEN}}"
+  TF_WORKSPACE: "terraform-github-actions"
+  CONFIG_DIRECTORY: "./"
 jobs:
   Deploy-Test:
     runs-on: ubuntu-latest
@@ -21,8 +26,5 @@ jobs:
         run: |
           pip install pytest pytest-cov
           pytest tests.py 
-      - name: Run Terraform
-        run: |
-          terraform plan
-          terraform apply
-
+  
+  
