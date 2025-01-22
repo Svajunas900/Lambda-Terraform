@@ -1,5 +1,5 @@
-name: "Terraform Plan"
-
+name: Terraform Plan
+run-name: Terraform Plan
 on:
   push:
     branches:
