@@ -1,9 +1,9 @@
-name: Testing
-run-name: Testing
-on: 
+name: Production
+run-name: Production
+on:
   push:
     branches:
-      - dev
+      - prod
 
 env:
   TF_CLOUD_ORGANIZATION: "OrioCookie"
@@ -12,13 +12,13 @@ env:
   CONFIG_DIRECTORY: "./"
 
 jobs:
-  Testing-deployment:
+  Testing-production:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: write
     steps:
-      
+
     - uses: actions/checkout@v4
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -74,5 +74,3 @@ jobs:
       with:
         run: ${{ steps.apply-run.outputs.run_id }}
         comment: "Apply Run from GitHub Actions CI ${{ github.sha }}"
-  
-  
