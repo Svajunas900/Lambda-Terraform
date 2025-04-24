@@ -7,3 +7,15 @@ All attention here is not the actual code but the whole infrastructure around it
 
 What it does? It creates lambda function in aws after testing and planning with terraform
 
+## HOW TO SECTION:
+
+Installing Application <br/>
+
+Step 1. Navigate to directory where you want to clone application <br/>
+   
+Step 2. Clone repository using url https://github.com/Svajunas900/Lambda-Terraform.git <br/>
+````
+git clone https://github.com/Svajunas900/Lambda-Terraform.git
+````
+
+If you want to create and push to aws your lambda function create terraform Api, get aws credentials and configure them then just push any changes to your repository and everything will work
