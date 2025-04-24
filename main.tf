@@ -31,7 +31,7 @@ resource "aws_lambda_function" "test_lambda" {
   handler       = "lambda_function.my_lambda_handler"
 
   source_code_hash = filebase64sha256("lambda_function.zip")
-
+  
   runtime = "python3.13"
 
   layers = [
