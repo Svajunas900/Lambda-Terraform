@@ -3,6 +3,7 @@ import requests
 
 
 def my_lambda_handler(event, context):
+
     url = event["url"]
     response = requests.get(url)
 
