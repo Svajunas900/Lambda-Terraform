@@ -1,0 +1,5 @@
+.terraform**
+layer
+python
+**__pycache__
+terraform.**
